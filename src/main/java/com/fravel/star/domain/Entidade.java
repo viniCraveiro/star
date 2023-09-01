@@ -17,4 +17,9 @@ public abstract class Entidade implements IEntidade {
     protected Entidade(Long id) {
         this.id = id;
     }
+
+    @Override
+    public Long getId() {
+        return this.id;
+    }
 }
