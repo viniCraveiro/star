@@ -1,13 +1,16 @@
 package com.fravel.star.domain.ubs;
 
+import com.fravel.star.domain.Entidade;
+import com.fravel.star.domain.IEntidade;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Embeddable
-public class Endereco {
+@Table
+public class Endereco extends Entidade {
     private String rua;
     private String numero;
     private String complemento;

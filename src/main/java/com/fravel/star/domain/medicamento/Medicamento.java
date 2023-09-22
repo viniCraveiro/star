@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Entity
@@ -14,20 +16,19 @@ import lombok.Setter;
 public class Medicamento extends Entidade {
     @Column(length = 100, nullable = false)
     private String nome;
-    private String quantidade;
     @Column(length = 100, nullable = false)
     private String codigo;
     @Column(length = 100, nullable = false)
     private String tipo;
-    private String validade;
+    private BigDecimal mg;
 
     public Medicamento() {
     }
 
-    public Medicamento(String nome, String quantidade, String codigo, String tipo) {
+    public Medicamento(String nome, String codigo, String tipo, BigDecimal mg) {
         this.nome = nome;
-        this.quantidade = quantidade;
         this.codigo = codigo;
         this.tipo = tipo;
+        this.mg = mg;
     }
 }

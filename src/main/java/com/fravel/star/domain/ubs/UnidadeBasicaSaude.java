@@ -2,9 +2,7 @@ package com.fravel.star.domain.ubs;
 
 import com.fravel.star.domain.Entidade;
 import com.fravel.star.domain.estoque.Estoque;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
