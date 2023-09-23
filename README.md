@@ -69,3 +69,63 @@ Aplicação para auxilio na UBS Digital
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id do funcionario |
+
+### Unidade basica de saude
+#### Lista paginada de UBS
+
+```http
+  GET /ubs
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `page` | `string` | **Optional**. page size |
+
+
+#### Busca UBS por ID
+
+```http
+  GET /ubs/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id da UBS |
+
+#### Cria nova UBS
+
+```http
+  POST /ubs
+```
+
+| Body | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nome`      | `string` | **Required**. Nome da UBS |
+| `endereco`      | `endereco` | **Required**. Endereco da UBS |
+| `sigla`      | `string` | **Required**. Sigla da UBS |
+| `codigo`      | `string` | **Required**. Codigo da UBS |
+
+#### Edita UBS
+
+```http
+  PUT /ubs/${id}
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id da UBS |
+
+| Body | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `nome`      | `string` | **Required**. Nome da UBS |
+| `endereco`      | `endereco` | **Required**. Endereco da UBS |
+| `sigla`      | `string` | **Required**. Sigla da UBS |
+| `codigo`      | `string` | **Required**. Codigo da UBS |
+
+#### Deleta UBS por ID
+
+```http
+  DELETE /ubs/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id da UBS |
