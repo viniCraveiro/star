@@ -43,4 +43,6 @@ public class FuncionarioService {
     public void delete(Long id) {
         funcionarioRepository.deleteById(id);
     }
+
+
 }

@@ -43,4 +43,8 @@ public class UnidadeBasicaSaudeService {
     public void delete(Long id) {
         unidadeBasicaSaudeRepository.deleteById(id);
     }
+
+    public List<UnidadeBasicaSaude> searchByName(String nome) {
+        return unidadeBasicaSaudeRepository.findByNomeContainingIgnoreCase(nome);
+    }
 }

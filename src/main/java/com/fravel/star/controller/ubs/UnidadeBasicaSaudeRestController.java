@@ -12,6 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/ubs")
 public class UnidadeBasicaSaudeRestController {
@@ -30,6 +34,18 @@ public class UnidadeBasicaSaudeRestController {
     @GetMapping()
     public ResponseEntity<Page<UnidadeBasicaSaude>> listAllPageable(Pageable pageable) {
         Page<UnidadeBasicaSaude> ubs = unidadeBasicaSaudeService.listPageable(pageable);
+        return new ResponseEntity<>(ubs, HttpStatus.OK);
+    }
+
+    @Operation(summary = "Busca UBS por nome", tags = "Unidade básica de saúde")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Lista de UBS encontrada.", content = {@Content(mediaType = "application/json")}),
+            @ApiResponse(responseCode = "400", description = "Solicitação inválida"),
+            @ApiResponse(responseCode = "404", description = "Não encontrado.")
+    })
+    @GetMapping("/search")
+    public ResponseEntity<List<UnidadeBasicaSaude>> searchByName(@RequestParam String nome) {
+        List<UnidadeBasicaSaude> ubs = unidadeBasicaSaudeService.searchByName(nome);
         return new ResponseEntity<>(ubs, HttpStatus.OK);
     }
 
