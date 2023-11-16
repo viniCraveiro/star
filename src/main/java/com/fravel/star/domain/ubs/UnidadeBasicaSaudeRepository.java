@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UnidadeBasicaSaudeRepository extends JpaRepository<UnidadeBasicaSaude, Long> {
+public interface UnidadeBasicaSaudeRepository extends JpaRepository<UnidadeBasicaSaude, Long>{
     List<UnidadeBasicaSaude> findByNomeContainingIgnoreCase(String nome);
 }
